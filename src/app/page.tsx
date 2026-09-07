@@ -2026,7 +2026,7 @@ export default function Home() {
           </div>
 
           <footer className="mt-12 mb-4 text-center text-sm font-bold text-slate-700/80 bg-white/60 backdrop-blur-sm py-4 rounded-xl border border-white/50 w-full max-w-6xl mx-auto shadow-sm">
-            &copy; {new Date().getFullYear()} J.Ruben & M.Kabalu
+            &copy; {new Date().getFullYear()} J.Ruben, M.Kabalu, J.Parera
           </footer>
         </div>
       </main>

@@ -2292,7 +2292,6 @@ export default function Home() {
                   >
                     <option value="Digunakan">Digunakan</option>
                     <option value="Tersimpan">Tersimpan</option>
-                    
                   </select>
                 </div>
                 <div>
@@ -2465,7 +2464,6 @@ export default function Home() {
                   >
                     <option value="Tersimpan">Tersimpan</option>
                     <option value="Digunakan">Digunakan</option>
-              
                   </select>
                 </div>
               </div>

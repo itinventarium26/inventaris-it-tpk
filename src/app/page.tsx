@@ -2026,7 +2026,7 @@ export default function Home() {
           </div>
 
           <footer className="mt-12 mb-4 text-center text-sm font-bold text-slate-700/80 bg-white/60 backdrop-blur-sm py-4 rounded-xl border border-white/50 w-full max-w-6xl mx-auto shadow-sm">
-            &copy; {new Date().getFullYear()} J.Ruben &
+            &copy; {new Date().getFullYear()} J.Ruben & M.Kabalu
           </footer>
         </div>
       </main>
@@ -2292,7 +2292,7 @@ export default function Home() {
                   >
                     <option value="Digunakan">Digunakan</option>
                     <option value="Tersimpan">Tersimpan</option>
-                    <option value="Dihapus">Dihapus</option>
+                    
                   </select>
                 </div>
                 <div>
@@ -2465,7 +2465,7 @@ export default function Home() {
                   >
                     <option value="Tersimpan">Tersimpan</option>
                     <option value="Digunakan">Digunakan</option>
-                    <option value="Dihapus">Dihapus</option>
+              
                   </select>
                 </div>
               </div>

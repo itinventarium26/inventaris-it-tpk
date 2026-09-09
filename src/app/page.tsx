@@ -1734,10 +1734,23 @@ export default function Home() {
                   });
                   setIsAccountModalOpen(true);
                 }}
-                className="text-sm font-bold text-blue-700 hover:text-blue-900 hover:underline transition-colors"
+                className="flex items-center gap-1.5 text-sm font-bold text-blue-700 hover:text-blue-900 hover:underline transition-colors"
                 title="Klik untuk kelola akun"
               >
-                {currentUser.username}
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                  />
+                </svg>
+                Admin
               </button>
               <div className="w-px h-5 bg-slate-300"></div>
               <button
@@ -2665,6 +2678,10 @@ export default function Home() {
                 <h4 className="font-bold text-slate-700 mb-3 flex items-center gap-2">
                   ✉️ Ganti Email
                 </h4>
+                <p className="text-xs text-slate-500 mb-3 -mt-1">
+                  Link konfirmasi akan dikirim ke email baru sebelum
+                  perubahan berlaku.
+                </p>
                 <form onSubmit={handleChangeEmail} className="space-y-3">
                   <input
                     type="email"
@@ -2675,19 +2692,6 @@ export default function Home() {
                       setAccountForm({
                         ...accountForm,
                         emailBaru: e.target.value,
-                      })
-                    }
-                    className="w-full border-2 border-slate-200 rounded-xl p-2.5 outline-none focus:border-blue-500 text-slate-800 text-sm"
-                  />
-                  <input
-                    type="password"
-                    required
-                    placeholder="Konfirmasi dengan password saat ini"
-                    value={accountForm.passwordLama}
-                    onChange={(e) =>
-                      setAccountForm({
-                        ...accountForm,
-                        passwordLama: e.target.value,
                       })
                     }
                     className="w-full border-2 border-slate-200 rounded-xl p-2.5 outline-none focus:border-blue-500 text-slate-800 text-sm"
@@ -2710,19 +2714,6 @@ export default function Home() {
                   🔒 Ganti Password
                 </h4>
                 <form onSubmit={handleChangePassword} className="space-y-3">
-                  <input
-                    type="password"
-                    required
-                    placeholder="Password lama"
-                    value={accountForm.passwordLama}
-                    onChange={(e) =>
-                      setAccountForm({
-                        ...accountForm,
-                        passwordLama: e.target.value,
-                      })
-                    }
-                    className="w-full border-2 border-slate-200 rounded-xl p-2.5 outline-none focus:border-blue-500 text-slate-800 text-sm"
-                  />
                   <input
                     type="password"
                     required

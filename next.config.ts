@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
     "10.73.126.129",
     "192.168.1.86",
     "10.232.49.129",
+    "172.23.71.129",
   ], // Sesuaikan jika ada IP lain
 };
 

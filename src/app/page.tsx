@@ -245,10 +245,20 @@ export default function Home() {
     setIsAccountSubmitting(true);
     try {
       const emailBaru = accountForm.emailBaru.trim().toLowerCase();
+
+      // Pastikan sesi masih valid & ter-refresh sebelum ubah data akun
+      const { data: sesiCek, error: errSesi } =
+        await supabase.auth.getSession();
+      if (errSesi || !sesiCek.session) {
+        throw new Error(
+          "Sesi login sudah berakhir. Silakan logout lalu login kembali.",
+        );
+      }
+
       const { error } = await supabase.auth.updateUser({ email: emailBaru });
       if (error) throw error;
       showToast(
-        "Cek email lama & baru Anda untuk konfirmasi perubahan!",
+        "Cek email lama dan baru Anda untuk konfirmasi perubahan!",
         "success",
       );
       setAccountForm({
@@ -278,6 +288,16 @@ export default function Home() {
         showToast("Password baru minimal 6 karakter!", "error");
         return;
       }
+
+      // Pastikan sesi masih valid & ter-refresh sebelum ubah data akun
+      const { data: sesiCek, error: errSesi } =
+        await supabase.auth.getSession();
+      if (errSesi || !sesiCek.session) {
+        throw new Error(
+          "Sesi login sudah berakhir. Silakan logout lalu login kembali.",
+        );
+      }
+
       const { error } = await supabase.auth.updateUser({
         password: accountForm.passwordBaru,
       });
@@ -2679,7 +2699,7 @@ export default function Home() {
                   ✉️ Ganti Email
                 </h4>
                 <p className="text-xs text-slate-500 mb-3 -mt-1">
-                  Link konfirmasi akan dikirim ke email baru sebelum
+                  Link konfirmasi akan dikirim ke email lama dan email baru sebelum
                   perubahan berlaku.
                 </p>
                 <form onSubmit={handleChangeEmail} className="space-y-3">
